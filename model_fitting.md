@@ -77,6 +77,8 @@ $$
 \overbrace{P\left(\text{world state} \,| \text{measurements}\right)}^{\text{posterior}} = \frac{\overbrace{P\left( \text{measurements}\,| \text{world state}\right)}^{\text{likelihood}}\times\overbrace{P\left(\text{world state}\right)}^{\text{prior}}  }{\underbrace{P\left( \text{measurements}\right)}_{\text{normalization term}} }.
 \end{align}
 $$
+
+
 The Bayes' equation has two main factors. One factor is the *likelihood*, which describes the relationship between the measurements and the sensor model. Assuming that we have multiple choices of world states, the likelihood is a function that tells us how well our measurements fit (i.e., are *explained* by) our current choice of world state. The likelihood function can also be seen as a *data-closeness* measure under a selected world state or model. 
 
 The other factor is the *prior* or *prior belief*, which describes the uncertainty of the world states. Assuming that some world states are more probable than others, the prior gives us a description of how probable each world state is.  
