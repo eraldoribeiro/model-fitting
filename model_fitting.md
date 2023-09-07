@@ -56,7 +56,7 @@ Solutions to vision problems usually comprise the following components:
 
 Modeling real-life problems usually involve dealing with *noisy measurements*. In addition to calculating with noisy measurements, the model itself is often an approximation of the actual problem we want to solve or the process that we want to represent. As a result, we need a mathematical framework to account for the uncertainty of the measurements and imprecision of the model. Figure 5 shows samples of distributions of the locations of a robot turning at corners of a square path. 
 
-| <img src="../../../../../Library/Application Support/typora-user-images/image-20230905093829614.png" alt="image-20230905093829614" style="zoom:20%;" /> | <img src="../../../../../Library/Application Support/typora-user-images/image-20230905094131705.png" alt="image-20230905094131705" style="zoom:20%;" /> |
+| <img src="figs/image-20230905093829614.png" alt="image-20230905093829614" style="zoom:20%;" /> | <img src="figs/image-20230905094131705.png" alt="image-20230905094131705" style="zoom:20%;" /> |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 
 **Figure 5**: Incremental accumulation of errors of a moving robot. **Left**: Gradual motion drift due to errors such as misalignment, wheel slip. **Right**: Calibrated robot return most of the times to the correct location. Figure from Andrew Davison’s lecture slides on robotics (https://www.doc.ic.ac.uk/~ajd/Robotics/RoboticsResources/lecture4.pdf).
@@ -82,6 +82,8 @@ The other factor is the *prior* or *prior belief*, which describes the uncertain
 In modeling problems, the likelihood and prior are often represented by parameterized functions. Usually, we model the *data* (i.e., noisy measurements) or we model the *state-of-the-world* (e.g., classification label, location of an object, ID of a face). 
 
 When designing the model, we choose the form of the likelihood function that best represents the domain of the quantity that describes the relationship between the world state and the measurements. Then, we choose the prior that best represents the domain of the parameters of the likelihood function. Ideally, we want to choose a prior that is *the conjugate* of the likelihood function (Prince, Chapter 3). For example, if we chose a *Bernoulli* distribution as the likelihood, then we would choose the *Beta* distribution as the prior. If we chose a *multivariate Gaussian* as the likelihood, we would choose the *normal inverse Wishart* as the prior. By choosing a conjugate prior, calculations yield a closed-form equation of the posterior, with the nice property that the final posterior retains the same *form* of the prior, i.e.:  
+
+
 $$
 \begin{align}
 \text{Posterior} &= \overbrace{\text{Bernoulli}}^{\text{likelihood}} \times \overbrace{\text{Beta}}^{\text{prior}} = \text{Beta}.\notag\\ 
