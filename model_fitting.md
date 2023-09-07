@@ -124,11 +124,9 @@ In Chapter 4, you will learn how to estimate the parameters of the model given t
 2. **Maximum a Posteriori (MAP)**. Here, we maximize the product between the likelihood and prior. 
 3. **Bayesian estimation**. We estimate the posterior distribution and then average over all samples from the posterior distribution.  
 
-Still in Chapter 4, you will see that all these procedures end up estimating the predictive density (Eq. 4.5, Prince), and that the predictive density of the ML and MAP approaches can be seen as a special case of the Bayesian predictive density (Eq. 4.6, Prince). By seeing ML and MAP as special cases of Bayesian, we can simply think that we always aim at solving Bayesian by using Eq. 4.5 (Prince) but sometimes we end up *settling* for solving Eq. 4.6 (Prince) either with ML or MAP. The reason we settle for ML or MAP is because they might be more convenient for some reason (e.g., we do not have a prior, problem has too many parameters, MAP or ML solution might be good enough). 
+In Chapter 4, you also will see that all these procedures end up estimating the predictive density (Eq. 4.5, Prince), and that the predictive density of the ML and MAP approaches can be seen as a special case of the Bayesian predictive density (Eq. 4.6, Prince). By seeing ML and MAP as special cases of Bayesian, we can simply think that we always aim at solving Bayesian by using Eq. 4.5 (Prince) but sometimes we end up *settling* for solving Eq. 4.6 (Prince) either with ML or MAP. The reason we settle for ML or MAP is because they might be more convenient for some reason (e.g., we do not have a prior, problem has too many parameters, MAP or ML solution might be good enough). 
 
 In Chapter 6 (Prince), you will learn about the two models that relate data to the state-of-the-world, i.e., *discriminative* and *generative* models. This chapter also gives an example of a regression problem and and classification problem. 
-
-
 
 #### Bayesian estimation 
 
@@ -140,10 +138,6 @@ $$
 
 
 
-
-
-
-
 #### Maximum a posteriori 
 
 Estimate the model parameters by maximizing the posterior probability, i.e.: 
@@ -151,6 +145,9 @@ $$
 \hat{\boldsymbol\theta} = \underset{\boldsymbol\theta}{\arg\max}[P\left( \boldsymbol\theta | {\bf x}_{1,\dots,I}\right)]
 $$
 
+#### Maximum likelihood
+
+Estimate the model parameters by maximizing the likelihood, i.e.: 
 $$
 \hat{\boldsymbol\theta} = \underset{\boldsymbol\theta}{\arg\max}[P\left({\bf x}_{1,\dots,I} | \boldsymbol\theta\right)]
 $$
